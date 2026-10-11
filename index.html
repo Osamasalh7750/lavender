@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة لافندر للخدمات اللوجستية | Lavender Logistic - العرض المتكامل</title>
+  <meta name="description" content="منصة متكاملة للنقل والتوزيع المبرد وسلاسل الإمداد B2B لكبرى المطاعم والمقاهي بالمملكة العربية السعودية.">
+  <link rel="icon" href="./images/logo.png" type="image/png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            lavender: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+              950: '#2e1065',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS (Relative path for file:/// and GitHub Pages) -->
+  <link rel="stylesheet" href="./css/custom.css">
+</head>
+<body class="relative bg-[#FAF8FF] text-slate-800 antialiased selection:bg-lavender-500 selection:text-white pb-16">
+
+  <!-- Ambient Blobs -->
+  <div class="bg-ambient-blob-1"></div>
+  <div class="bg-ambient-blob-2"></div>
+
+  <!-- ======================================================== -->
+  <!-- 0. TOP QUICK-SWITCHER PILL BAR (للمعاينة والتنقل السريع) -->
+  <!-- ======================================================== -->
+  <aside class="sticky top-0 z-50 quick-switcher-bar text-white px-3 py-2.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+      
+      <div class="flex items-center gap-2 shrink-0">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="text-xs font-bold text-lavender-200 hidden sm:inline">معاينة صفحات المنصة الـ 12:</span>
+        <span class="text-xs font-bold text-lavender-200 sm:hidden">الصفحات:</span>
+      </div>
+
+      <!-- Horizontal Scrollable Pill List -->
+      <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 text-xs">
+        <a href="#/landing" data-view="landing" class="quick-pill active px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+          1. الهبوط والتعريف
+        </a>
+        <a href="#/home" data-view="home" class="quick-pill px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+          2. منصة الطلب B2B
+        </a>
+        <a href="#/shop" data-view="shop" class="quick-pill px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+          3. المتجر والطلب بالوزن
+        </a>
+        <a href="#/order_step_one" data-view="order_step_one" class="quick-pill px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+          4. جدولة الشحن المبرد
+        </a>
+        <a href="#/order_step_two" data-view="order_step_two" class="quick-pill px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+          5. الدفع وتأكيد الشحنة
+        </a>
+        <a href="#/tracking" data-view="tracking" class="quick-pill px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+          6. التتبع الميداني GPS
+        </a>
+        <a href="#/order_detail" data-view="order_detail" class="quick-pill px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+          7. الفاتورة وختم e-POD
+        </a>
+        <a href="#/order_list" data-view="order_list" class="quick-pill px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+          8. سجل الطلبات
+        </a>
+        <a href="#/locations" data-view="locations" class="quick-pill px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+          9. إدارة الفروع
+        </a>
+        <a href="#/login" data-view="login" class="quick-pill px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+          10. تسجيل الدخول
+        </a>
+        <a href="#/signup" data-view="signup" class="quick-pill px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+          11. تسجيل منشأة جديدة
+        </a>
+        <a href="#/admin" data-view="admin" class="quick-pill px-3 py-1.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500/30 transition">
+          12. لوحة الإدارة Admin
+        </a>
+      </div>
+
+      <!-- Quick Cart Button -->
+      <a href="#/order_step_one" class="shrink-0 flex items-center gap-1.5 bg-lavender-600 hover:bg-lavender-500 text-white px-3 py-1.5 rounded-xl text-xs font-bold transition">
+        <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i>
+        <span class="cart-count-badge bg-emerald-400 text-slate-950 px-1.5 py-0.2 rounded-full text-[10px] font-black font-mono">3</span>
+      </a>
+
+    </div>
+  </aside>
+
+  <!-- ======================================================== -->
+  <!-- MAIN HEADER & NAVIGATION BAR                            -->
+  <!-- ======================================================== -->
+  <header class="glass-nav relative z-40 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Brand Logo -->
+        <a href="#/landing" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-lavender-800 to-lavender-600 p-2 shadow-lg shadow-lavender-500/20 group-hover:scale-105 transition-transform flex items-center justify-center">
+            <img src="./images/logo.png" alt="شعار لافندر" class="w-full h-full object-contain filter brightness-0 invert">
+          </div>
+          <div>
+            <span class="text-2xl font-black tracking-tight text-lavender-950">لافندر</span>
+            <span class="block text-[11px] font-bold text-lavender-600 tracking-wider uppercase">Lavender Logistic</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-7 font-medium text-sm text-slate-700">
+          <a href="#/landing" class="hover:text-lavender-600 transition">عن الشركة</a>
+          <a href="#/home" class="hover:text-lavender-600 transition flex items-center gap-1.5 text-lavender-700 font-bold">
+            <span class="w-2 h-2 rounded-full bg-lavender-500 animate-pulse"></span>
+            <span>منصة التوريد B2B</span>
+          </a>
+          <a href="#/tracking" class="hover:text-lavender-600 transition">تتبع الشحنة المباشر</a>
+          <a href="#/order_list" class="hover:text-lavender-600 transition">سجل الطلبات</a>
+          <a href="#/locations" class="hover:text-lavender-600 transition">فروعنا</a>
+          <a href="#/admin" class="hover:text-amber-600 transition text-amber-700 font-semibold">لوحة الإدارة</a>
+        </nav>
+
+        <!-- CTAs -->
+        <div class="flex items-center gap-3">
+          <a href="#/login" class="hidden sm:flex items-center gap-2 text-sm font-bold text-lavender-900 bg-lavender-100 hover:bg-lavender-200 px-4 py-2.5 rounded-xl transition border border-lavender-300/40">
+            <i data-lucide="user" class="w-4 h-4 text-lavender-600"></i>
+            <span>دخول المنصة</span>
+          </a>
+
+          <a href="#/order_step_one" class="btn-lavender flex items-center gap-2 text-sm font-bold px-4 py-2.5 rounded-xl shadow-lg">
+            <i data-lucide="truck" class="w-4 h-4"></i>
+            <span>طلب شاحنة مبردة</span>
+          </a>
+
+          <!-- Mobile Toggle -->
+          <button id="mobileMenuToggle" class="lg:hidden p-2.5 rounded-xl bg-lavender-50 text-slate-700 border border-lavender-200">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenuDrawer" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-lavender-200 px-6 py-6 space-y-3">
+      <a href="#/landing" class="block font-medium text-slate-800 hover:text-lavender-600">عن الشركة والهبوط</a>
+      <a href="#/home" class="block font-bold text-lavender-700 hover:text-lavender-800">منصة التوريد B2B</a>
+      <a href="#/shop" class="block font-medium text-slate-800 hover:text-lavender-600">المتجر والمنتجات بالوزن</a>
+      <a href="#/tracking" class="block font-medium text-slate-800 hover:text-lavender-600">التتبع الميداني المباشر</a>
+      <a href="#/order_list" class="block font-medium text-slate-800 hover:text-lavender-600">سجل الطلبات</a>
+      <a href="#/locations" class="block font-medium text-slate-800 hover:text-lavender-600">إدارة الفروع</a>
+      <a href="#/admin" class="block font-bold text-amber-700">لوحة الإدارة B2B Admin</a>
+      <div class="pt-4 border-t border-slate-100 flex gap-2">
+        <a href="#/login" class="flex-1 text-center py-2.5 bg-lavender-100 text-lavender-900 rounded-xl font-bold text-sm">تسجيل الدخول</a>
+        <a href="#/signup" class="flex-1 text-center py-2.5 bg-lavender-600 text-white rounded-xl font-bold text-sm">تسجيل جديد</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================== -->
+  <!-- VIEW 1: LANDING & CORPORATE OVERVIEW (#/landing)         -->
+  <!-- ======================================================== -->
+  <main id="view-landing" class="app-view">
+    
+    <!-- Hero Section -->
+    <section class="relative pt-10 pb-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
+            <div class="inline-flex items-center gap-2 bg-lavender-100 border border-lavender-300 text-lavender-800 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-lavender-600"></span>
+              <span>الريادة في سلاسل التبريد واللوجستيات المبردة داخل المملكة 🇸🇦</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 leading-[1.2] tracking-tight">
+              حلول النقل والتوزيع <br>
+              <span class="bg-gradient-to-r from-lavender-700 via-lavender-600 to-lavender-800 bg-clip-text text-transparent">المبرد والذكي (3PL)</span> <br>
+              لكبرى المقاهي والمطاعم
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              لافندر هي مؤسسة رائدة في مجال الخدمات اللوجستية توفر إدارة وتشغيل عمليات النقل بجودة عالية في جميع أنحاء المملكة. نضمن وصول بضائعكم عبر أسطول يضم أكثر من 50 مركبة يتم التحكم بحرارتها لحظياً.
+            </p>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 pb-4">
+              <div class="glass-card p-3.5 rounded-2xl text-center">
+                <span class="block text-2xl font-black text-lavender-700">50+</span>
+                <span class="text-xs text-slate-500 font-medium">مركبة مبردة</span>
+              </div>
+              <div class="glass-card p-3.5 rounded-2xl text-center">
+                <span class="block text-2xl font-black text-emerald-600">24/7</span>
+                <span class="text-xs text-slate-500 font-medium">تشغيل مستمر</span>
+              </div>
+              <div class="glass-card p-3.5 rounded-2xl text-center">
+                <span class="block text-2xl font-black text-cyan-600">3 أنماط</span>
+                <span class="text-xs text-slate-500 font-medium">جاف • مبرد • مجمد</span>
+              </div>
+              <div class="glass-card p-3.5 rounded-2xl text-center">
+                <span class="block text-2xl font-black text-violet-700">100%</span>
+                <span class="text-xs text-slate-500 font-medium">تغطية المملكة</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="#/home" class="btn-lavender w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base flex items-center justify-center gap-2">
+                <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                <span>دخول منصة التوريد والطلب B2B</span>
+              </a>
+              <a href="#/tracking" class="w-full sm:w-auto px-7 py-4 rounded-xl text-slate-800 bg-white hover:bg-slate-50 border border-slate-200 font-bold text-base flex items-center justify-center gap-2 shadow-sm transition">
+                <i data-lucide="map-pin" class="w-5 h-5 text-lavender-600"></i>
+                <span>تجربة التتبع الحي للأسطول</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Vehicle & Telemetry Mockup -->
+          <div class="lg:col-span-5 relative">
+            <div class="glass-card-dark rounded-3xl p-6 text-white shadow-2xl relative overflow-hidden">
+              <div class="flex justify-between items-center pb-4 border-b border-white/10">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span class="font-bold text-sm tracking-wide text-emerald-300">مستشعر IoT للحرارة نشط</span>
+                </div>
+                <span class="text-xs font-mono bg-white/10 px-2.5 py-1 rounded-md text-lavender-200">TRUCK #42</span>
+              </div>
+
+              <div class="relative py-6 flex flex-col items-center justify-center">
+                <div class="w-full max-h-56 flex items-center justify-center">
+                  <img src="./images/truck-single.png" alt="شاحنة لافندر" class="w-4/5 object-contain filter drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)] transform -scale-x-100">
+                </div>
+
+                <!-- Temperature Sensor Floating -->
+                <div class="absolute top-2 right-2 bg-black/60 backdrop-blur-md border border-cyan-400/40 rounded-2xl p-3 text-right shadow-xl">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="snowflake" class="w-4 h-4 text-cyan-400"></i>
+                    <span class="text-xs text-slate-300 font-medium">درجة حرارة الحاوية</span>
+                  </div>
+                  <div class="text-2xl font-black text-cyan-300 font-mono mt-0.5 live-temp-display">+2.4°C</div>
+                  <div class="text-[10px] text-emerald-400 font-semibold">حفظ مثالي للمنتجات</div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2 pt-4 border-t border-white/10 text-center text-xs">
+                <div class="bg-white/5 rounded-xl p-2.5">
+                  <span class="text-slate-400 block text-[11px]">النمط</span>
+                  <span class="font-bold text-cyan-300">مبرد Chilled</span>
+                </div>
+                <div class="bg-white/5 rounded-xl p-2.5">
+                  <span class="text-slate-400 block text-[11px]">السرعة</span>
+                  <span class="font-bold text-white">68 كم/س</span>
+                </div>
+                <div class="bg-white/5 rounded-xl p-2.5">
+                  <span class="text-slate-400 block text-[11px]">المتبقي</span>
+                  <span class="font-bold text-emerald-300">18 دقيقة</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Cold-Chain Price Calculator -->
+    <section class="py-16 bg-white border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-bold text-lavender-600 uppercase tracking-widest bg-lavender-100 px-3.5 py-1.5 rounded-full border border-lavender-200">
+            حاسبة النقل والتسعير الفورية
+          </span>
+          <h2 class="text-3xl font-black text-slate-950 mt-4">
+            احسب تكلفة النقل المبرد واللوجستي لشحنتك بدقة
+          </h2>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6 sm:p-10 max-w-5xl mx-auto shadow-xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <div class="lg:col-span-7 space-y-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1.5">مدينة الانطلاق</label>
+                  <select id="calcOrigin" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold">
+                    <option value="الرياض" selected>الرياض</option>
+                    <option value="جدة">جدة</option>
+                    <option value="الدمام">الدمام</option>
+                    <option value="القصيم">القصيم</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1.5">مدينة الوصول</label>
+                  <select id="calcDest" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold">
+                    <option value="الرياض">الرياض</option>
+                    <option value="جدة" selected>جدة</option>
+                    <option value="الدمام">الدمام</option>
+                    <option value="القصيم">القصيم</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1.5">نوع الشاحنة المطلوبة</label>
+                <select id="calcVehicle" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold">
+                  <option value="شاحنة دينا مبردة (4 طن)" selected>شاحنة دينا مبردة (سعة 4 طن - الأكثر طلباً)</option>
+                  <option value="فان / وانيت مبرد (1.5 طن)">فان / وانيت مبرد (سعة 1.5 طن - شحنات سريعة)</option>
+                  <option value="شاحنة نقل كبرى (12 طن)">شاحنة نقل كبرى تريلا (سعة 12 طن)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1.5">نمط التبريد المطلوب</label>
+                <div class="grid grid-cols-3 gap-3">
+                  <label class="flex flex-col p-3 rounded-2xl border-2 border-emerald-400 bg-emerald-50/40 cursor-pointer">
+                    <input type="radio" name="tempMode" value="مبرد" checked class="sr-only">
+                    <span class="text-xs font-bold text-emerald-800">مبرد (+4°C)</span>
+                    <span class="text-[10px] text-slate-500 mt-1">ألبان، حلويات، عصائر</span>
+                  </label>
+                  <label class="flex flex-col p-3 rounded-2xl border-2 border-slate-200 hover:border-cyan-400 cursor-pointer">
+                    <input type="radio" name="tempMode" value="مجمد" class="sr-only">
+                    <span class="text-xs font-bold text-cyan-800">مجمد (-18°C)</span>
+                    <span class="text-[10px] text-slate-500 mt-1">لحوم ومثلجات</span>
+                  </label>
+                  <label class="flex flex-col p-3 rounded-2xl border-2 border-slate-200 hover:border-amber-400 cursor-pointer">
+                    <input type="radio" name="tempMode" value="جاف" class="sr-only">
+                    <span class="text-xs font-bold text-amber-800">جاف (عادي)</span>
+                    <span class="text-[10px] text-slate-500 mt-1">تعبئة وكراتين</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price Output Card -->
+            <div class="lg:col-span-5 bg-gradient-to-br from-lavender-900 to-slate-950 rounded-2xl p-6 text-white flex flex-col justify-between shadow-xl">
+              <div>
+                <div class="flex justify-between items-center pb-3 border-b border-white/10 text-xs">
+                  <span class="text-lavender-300">التقدير اللوجستي المباشر</span>
+                  <span class="bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full font-bold">تسعير آلي بالمسافة</span>
+                </div>
+                <div class="my-6 text-center">
+                  <span class="text-xs text-slate-400 block mb-1">التكلفة التقديرية للرحلة</span>
+                  <div class="text-4xl sm:text-5xl font-black font-mono" id="calcResultPrice">---</div>
+                  <span class="text-[11px] text-lavender-300 block mt-1">شاملة السائق والتبريد ومراقبة الـ GPS</span>
+                </div>
+                <div class="space-y-2 py-3 border-t border-white/10 text-xs">
+                  <div class="flex justify-between text-slate-300">
+                    <span>المسافة التقديرية:</span>
+                    <span class="font-bold text-white font-mono" id="calcResultDistance">--- كم</span>
+                  </div>
+                  <div class="flex justify-between text-slate-300">
+                    <span>زمن النقل:</span>
+                    <span class="font-bold text-white" id="calcResultTime">--- ساعة</span>
+                  </div>
+                  <div class="flex justify-between text-slate-300">
+                    <span>النمط الحراري:</span>
+                    <span class="font-bold text-cyan-300" id="calcResultTemp">مبرد</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-4">
+                <a id="calcWhatsappCta" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition text-sm">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  <span>تأكيد الحجز فوراً عبر واتساب</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Partners of Success -->
+    <section class="py-16 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold text-lavender-600 uppercase tracking-widest bg-lavender-100 px-3.5 py-1.5 rounded-full">شركاء النجاح</span>
+          <h2 class="text-2xl font-black text-slate-900 mt-3">نعتز بثقة كبرى العلامات التجارية في المملكة</h2>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 text-center">
+          <div class="glass-card p-4 rounded-2xl"><span class="font-black text-slate-900 block">هاف مليون</span><span class="text-[11px] text-lavender-600">Half Million</span></div>
+          <div class="glass-card p-4 rounded-2xl"><span class="font-black text-slate-900 block">ليلو</span><span class="text-[11px] text-lavender-600">Lilou Artisanal</span></div>
+          <div class="glass-card p-4 rounded-2xl"><span class="font-black text-slate-900 block">لوغرونييه</span><span class="text-[11px] text-lavender-600">Le Grenier à Pain</span></div>
+          <div class="glass-card p-4 rounded-2xl"><span class="font-black text-slate-900 block">كوستا كوفي</span><span class="text-[11px] text-lavender-600">Costa Coffee</span></div>
+          <div class="glass-card p-4 rounded-2xl"><span class="font-black text-slate-900 block">كاريبو كوفي</span><span class="text-[11px] text-lavender-600">Caribou Coffee</span></div>
+          <div class="glass-card p-4 rounded-2xl"><span class="font-black text-slate-900 block">تمرية</span><span class="text-[11px] text-lavender-600">Tmryah</span></div>
+          <div class="glass-card p-4 rounded-2xl"><span class="font-black text-slate-900 block">بيك اواي</span><span class="text-[11px] text-lavender-600">Bake Away</span></div>
+          <div class="glass-card p-4 rounded-2xl"><span class="font-black text-slate-900 block">تريستي كوفي</span><span class="text-[11px] text-lavender-600">Trieste Coffee</span></div>
+          <div class="glass-card p-4 rounded-2xl"><span class="font-black text-slate-900 block">باستيل</span><span class="text-[11px] text-lavender-600">Pastel</span></div>
+          <div class="glass-card p-4 rounded-2xl"><span class="font-black text-slate-900 block">هوبو</span><span class="text-[11px] text-lavender-600">Hobo</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fleet Real Photos Gallery -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold text-lavender-600 uppercase tracking-widest bg-lavender-100 px-3.5 py-1.5 rounded-full">معرض الأسطول الحقيقي</span>
+          <h2 class="text-2xl font-black text-slate-900 mt-3">شاحنات تبريد مجهزة بأحدث المواصفات</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="rounded-2xl overflow-hidden shadow-md h-60 border border-slate-200">
+            <img src="./images/fleet-1.jpg" alt="أسطول لافندر" class="w-full h-full object-cover">
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-md h-60 border border-slate-200">
+            <img src="./images/fleet-2.jpg" alt="أسطول لافندر" class="w-full h-full object-cover">
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-md h-60 border border-slate-200">
+            <img src="./images/fleet-3.jpg" alt="أسطول لافندر" class="w-full h-full object-cover">
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-md h-60 border border-slate-200">
+            <img src="./images/fleet-4.jpg" alt="أسطول لافندر" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- VIEW 2: B2B MARKETPLACE & CATALOG (#/home)               -->
+  <!-- ======================================================== -->
+  <main id="view-home" class="app-view hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      
+      <!-- Current Delivery Branch Banner -->
+      <div class="glass-card rounded-2xl p-4.5 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-lavender-300">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-lavender-100 text-lavender-700 flex items-center justify-center shrink-0">
+            <i data-lucide="map-pin" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="text-xs text-slate-500 block">الفرع المحدد للاستلام:</span>
+            <span class="text-sm font-bold text-slate-950">فرع العليا - طريق التحلية، الرياض</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="#/locations" class="text-xs font-bold text-lavender-700 hover:text-lavender-900 bg-lavender-50 border border-lavender-200 px-3.5 py-2 rounded-xl transition">
+            تغيير موقع الفرع
+          </a>
+          <a href="#/order_step_one" class="btn-lavender text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i>
+            <span>متابعة السلة</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Categories Filter Slider -->
+      <div class="mb-8">
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 text-xs font-bold">
+          <button class="bg-lavender-700 text-white px-4 py-2 rounded-xl shrink-0">جميع الموردين</button>
+          <button class="bg-white border border-slate-200 hover:border-lavender-400 text-slate-700 px-4 py-2 rounded-xl shrink-0">حلويات ومخبوزات مبردة (+4°C)</button>
+          <button class="bg-white border border-slate-200 hover:border-lavender-400 text-slate-700 px-4 py-2 rounded-xl shrink-0">حبوب قهوة ومشروبات</button>
+          <button class="bg-white border border-slate-200 hover:border-lavender-400 text-slate-700 px-4 py-2 rounded-xl shrink-0">ألبان وحليب كافيهات مبرد</button>
+          <button class="bg-white border border-slate-200 hover:border-lavender-400 text-slate-700 px-4 py-2 rounded-xl shrink-0">شحن مجمد (-18°C)</button>
+          <button class="bg-white border border-slate-200 hover:border-lavender-400 text-slate-700 px-4 py-2 rounded-xl shrink-0">مواد تعبئة وتغليف جافة</button>
+        </div>
+      </div>
+
+      <!-- Suppliers Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Vendor 1 -->
+        <div class="glass-card hover-lift rounded-3xl overflow-hidden border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="h-44 bg-slate-900 relative">
+              <img src="./images/fleet-1.jpg" alt="مستودعات هاف مليون" class="w-full h-full object-cover opacity-80">
+              <div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[11px] px-2.5 py-1 rounded-lg font-bold">
+                مبرد +4°C
+              </div>
+              <div class="absolute bottom-3 right-3 bg-white text-slate-950 font-black text-xs px-3 py-1 rounded-lg shadow">
+                هاف مليون (Half Million Supply)
+              </div>
+            </div>
+            <div class="p-5">
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                المستودع المركزي لتوريد حبوب القهوة المختصة، خلطات الحليب المبرد، ومستلزمات المقاهي.
+              </p>
+              <div class="flex items-center justify-between text-xs text-slate-500 pt-3 border-t border-slate-100">
+                <span>⏱ التوصيل: خلال ساعتين</span>
+                <span>⭐ تقييم 4.9 (120 طلب)</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <a href="#/shop" class="btn-lavender w-full py-2.5 rounded-xl font-bold text-xs text-center block">
+              تصفح المنتجات والطلب بالوزن
+            </a>
+          </div>
+        </div>
+
+        <!-- Vendor 2 -->
+        <div class="glass-card hover-lift rounded-3xl overflow-hidden border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="h-44 bg-slate-900 relative">
+              <img src="./images/fleet-2.jpg" alt="حلويات ليلو" class="w-full h-full object-cover opacity-80">
+              <div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-cyan-300 text-[11px] px-2.5 py-1 rounded-lg font-bold">
+                مبرد فائق +2°C
+              </div>
+              <div class="absolute bottom-3 right-3 bg-white text-slate-950 font-black text-xs px-3 py-1 rounded-lg shadow">
+                مخابز وحلويات ليلو (Lilou Bakery)
+              </div>
+            </div>
+            <div class="p-5">
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                توريد الكيك اليومي الفاخر، الحلويات الفرنسية، والمخبوزات الطازجة بعربات تحكم تبريد دقيق.
+              </p>
+              <div class="flex items-center justify-between text-xs text-slate-500 pt-3 border-t border-slate-100">
+                <span>⏱ التوصيل: صباحي مجدول</span>
+                <span>⭐ تقييم 5.0 (88 طلب)</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <a href="#/shop" class="btn-lavender w-full py-2.5 rounded-xl font-bold text-xs text-center block">
+              تصفح المنتجات والطلب بالوزن
+            </a>
+          </div>
+        </div>
+
+        <!-- Vendor 3 -->
+        <div class="glass-card hover-lift rounded-3xl overflow-hidden border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="h-44 bg-slate-900 relative">
+              <img src="./images/fleet-3.jpg" alt="حلويات تمرية" class="w-full h-full object-cover opacity-80">
+              <div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-emerald-300 text-[11px] px-2.5 py-1 rounded-lg font-bold">
+                مبرد وجاف
+              </div>
+              <div class="absolute bottom-3 right-3 bg-white text-slate-950 font-black text-xs px-3 py-1 rounded-lg shadow">
+                حلويات تمرية (Tmryah Central)
+              </div>
+            </div>
+            <div class="p-5">
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                توريد منتجات الضيافة، حلويات التمر، والشوكولاتة الفاخرة الموزعة على فروع التجزئة.
+              </p>
+              <div class="flex items-center justify-between text-xs text-slate-500 pt-3 border-t border-slate-100">
+                <span>⏱ التوصيل: فوري وجدول</span>
+                <span>⭐ تقييم 4.8 (95 طلب)</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <a href="#/shop" class="btn-lavender w-full py-2.5 rounded-xl font-bold text-xs text-center block">
+              تصفح المنتجات والطلب بالوزن
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- VIEW 3: SHOP & WEIGHT-BASED ORDERING (#/shop)            -->
+  <!-- ======================================================== -->
+  <main id="view-shop" class="app-view hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      
+      <!-- Store Header Card -->
+      <div class="glass-card rounded-3xl p-6 mb-8 border border-lavender-200 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-5">
+          <div class="w-16 h-16 rounded-2xl bg-lavender-900 text-white flex items-center justify-center font-black text-xl shadow-lg">
+            HM
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-2xl font-black text-slate-950">مستودعات هاف مليون المركزية (Half Million)</h1>
+              <span class="bg-emerald-100 text-emerald-800 text-[11px] font-bold px-2.5 py-0.5 rounded-md">مورد معتمد</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">تجهيز وتوريد مستلزمات المقاهي وسلاسل التبريد B2B بالرياض</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="#/order_step_one" class="btn-lavender px-5 py-3 rounded-xl text-xs font-bold flex items-center gap-2 shadow-lg">
+            <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+            <span>سلة الطلب (<span class="cart-count-badge">3</span>)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Product 1 -->
+        <div class="glass-card rounded-3xl p-5 border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="bg-cyan-100 text-cyan-800 text-[10px] font-bold px-2.5 py-1 rounded-md">يتطلب مبرد (+4°C)</span>
+              <span class="font-black text-lavender-900 text-lg font-mono">68 ر.س <span class="text-xs font-normal text-slate-500">/ كرتون</span></span>
+            </div>
+            <h3 class="text-base font-bold text-slate-950">كرتون حليب طازج كامل الدسم (12 عبوة × 1 لتر)</h3>
+            <p class="text-xs text-slate-500 mt-1">مخصص لصنع رغوة القهوة المختصة واللاتيه. يتم حفظه بشاحنة تبريد 4°C.</p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-medium">الحد الأدنى: 5 كراتين</span>
+            <button onclick="addItemToCart('كرتون حليب طازج كامل الدسم', 68, 'كرتون', 'مبرد')" class="btn-lavender px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
+              <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+              <span>إضافة للسلة</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 2 (Weight Based) -->
+        <div class="glass-card rounded-3xl p-5 border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-1 rounded-md">طلب بالوزن (كجم)</span>
+              <span class="font-black text-lavender-900 text-lg font-mono">95 ر.س <span class="text-xs font-normal text-slate-500">/ كجم</span></span>
+            </div>
+            <h3 class="text-base font-bold text-slate-950">حبوب قهوة مختصة كولومبية إكسلسو (محمصة)</h3>
+            <p class="text-xs text-slate-500 mt-1">حبوب بن عالية الجودة معبأة بأكياس صمام حفظ النكهة والشحن الجاف.</p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-medium">شحن جاف آمن</span>
+            <button onclick="addItemToCart('حبوب قهوة مختصة كولومبية', 95, 'كجم', 'جاف')" class="btn-lavender px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
+              <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+              <span>إضافة بالوزن</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="glass-card rounded-3xl p-5 border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="bg-cyan-100 text-cyan-800 text-[10px] font-bold px-2.5 py-1 rounded-md">حساس للحرارة (+2°C)</span>
+              <span class="font-black text-lavender-900 text-lg font-mono">140 ر.س <span class="text-xs font-normal text-slate-500">/ قالب</span></span>
+            </div>
+            <h3 class="text-base font-bold text-slate-950">قوالب كيك فاخرة مشكلة (تموين يومي للكافيهات)</h3>
+            <p class="text-xs text-slate-500 mt-1">كيك شوكولاتة وكراميل طازج. يتطلب نقلاً مبرداً عالي الدقة دون اهتزاز.</p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-medium">تغليف عازل للصدمات</span>
+            <button onclick="addItemToCart('قوالب كيك فاخرة مشكلة', 140, 'قالب', 'مبرد')" class="btn-lavender px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
+              <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+              <span>إضافة للسلة</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- VIEW 4: ORDER STEP ONE - SCHEDULING (#/order_step_one)   -->
+  <!-- ======================================================== -->
+  <main id="view-order_step_one" class="app-view hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      
+      <!-- Wizard Progress Bar -->
+      <div class="mb-10 text-center">
+        <div class="flex items-center justify-center gap-3 text-xs font-bold mb-3">
+          <span class="text-lavender-700 bg-lavender-100 px-3 py-1 rounded-full border border-lavender-300">الخطوة 1: جدولة النقل والتبريد</span>
+          <span class="text-slate-400">←</span>
+          <span class="text-slate-400">الخطوة 2: الدفع وتأكيد الشحنة</span>
+        </div>
+        <h1 class="text-2xl font-black text-slate-950">جدولة التوصيل ونمط التبريد</h1>
+      </div>
+
+      <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+        
+        <!-- Cart Items Summary -->
+        <div>
+          <h4 class="text-sm font-bold text-slate-900 mb-3">محتويات السلة الحالية</h4>
+          <div id="cartItemsList" class="space-y-2.5">
+            <!-- Injected by app.js -->
+          </div>
+        </div>
+
+        <!-- Temperature Mode Selection -->
+        <div class="pt-4 border-t border-slate-100">
+          <label class="block text-xs font-bold text-slate-900 mb-2">تحديد درجة حرارة شاحنة التبريد</label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <label class="p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50/50 cursor-pointer flex items-center gap-3">
+              <input type="radio" name="orderTemp" value="مبرد" checked>
+              <div>
+                <span class="text-xs font-bold text-emerald-900 block">مبرد (+0°C إلى +4°C)</span>
+                <span class="text-[10px] text-slate-500">للحلويات والألبان والكريمات</span>
+              </div>
+            </label>
+            <label class="p-4 rounded-2xl border-2 border-slate-200 hover:border-cyan-400 cursor-pointer flex items-center gap-3">
+              <input type="radio" name="orderTemp" value="مجمد">
+              <div>
+                <span class="text-xs font-bold text-cyan-900 block">مجمد (-18°C)</span>
+                <span class="text-[10px] text-slate-500">للحوم والمنتجات المجمدة</span>
+              </div>
+            </label>
+            <label class="p-4 rounded-2xl border-2 border-slate-200 hover:border-amber-400 cursor-pointer flex items-center gap-3">
+              <input type="radio" name="orderTemp" value="جاف">
+              <div>
+                <span class="text-xs font-bold text-amber-900 block">جاف Dry</span>
+                <span class="text-[10px] text-slate-500">للبن الجاف والمواد العادية</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Date & Slot Scheduling -->
+        <div class="pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-900 mb-1.5">تاريخ التوصيل المطلوب</label>
+            <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold">
+              <option>اليوم - تسليم مسائي</option>
+              <option selected>غداً - تسليم صباحي باكر (موصى به للمقاهي)</option>
+              <option>بعد غد</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-900 mb-1.5">الفترة الزمنية للاستلام (Delivery Slot)</label>
+            <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold">
+              <option selected>فترة صباحية (06:00 ص - 09:00 ص) قبل فتح الفرع</option>
+              <option>فترة الظهيرة (12:00 م - 03:00 م)</option>
+              <option>فترة مسائية (06:00 م - 09:00 م)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Driver Instructions Notes -->
+        <div class="pt-4 border-t border-slate-100">
+          <label class="block text-xs font-bold text-slate-900 mb-1.5">ملاحظات وتعليمات خاصة للسائق ومسؤول الفرع</label>
+          <textarea rows="2" placeholder="مثال: يرجى الاتصال على مشرف الفرع قبل الوصول بـ 15 دقيقة، واستخدام الباب الخلفي..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-lavender-500"></textarea>
+        </div>
+
+        <div class="pt-4 flex justify-between items-center">
+          <a href="#/home" class="text-xs font-bold text-slate-500 hover:text-slate-800">← العودة للكتالوج</a>
+          <a href="#/order_step_two" class="btn-lavender px-8 py-3.5 rounded-xl font-bold text-xs flex items-center gap-2 shadow-lg">
+            <span>متابعة لخيارات الدفع وتأكيد الشحنة</span>
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- VIEW 5: ORDER STEP TWO - PAYMENT & CONFIRM (#/order_step_two) -->
+  <!-- ======================================================== -->
+  <main id="view-order_step_two" class="app-view hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      
+      <div class="mb-10 text-center">
+        <div class="flex items-center justify-center gap-3 text-xs font-bold mb-3">
+          <a href="#/order_step_one" class="text-emerald-700">✓ الخطوة 1: جدولة النقل</a>
+          <span class="text-slate-400">←</span>
+          <span class="text-lavender-700 bg-lavender-100 px-3 py-1 rounded-full border border-lavender-300">الخطوة 2: الدفع وتأكيد الشحنة</span>
+        </div>
+        <h1 class="text-2xl font-black text-slate-950">طريقة الدفع وتأكيد الشحنة</h1>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        
+        <!-- Payment Options (7 cols) -->
+        <div class="md:col-span-7 glass-card rounded-3xl p-6 sm:p-8 space-y-4">
+          <h4 class="text-sm font-bold text-slate-900 mb-2">اختر طريقة السداد لقطاع المنشآت (B2B Payment)</h4>
+
+          <label class="p-4 rounded-2xl border-2 border-lavender-500 bg-lavender-50/50 cursor-pointer flex items-center gap-3">
+            <input type="radio" name="b2bPayMethod" value="credit" checked>
+            <div>
+              <span class="text-xs font-bold text-lavender-900 block">حساب ائتماني آجل للشركات (B2B Credit Line)</span>
+              <span class="text-[11px] text-slate-500">إصدار فاتورة ضريبية موحدة مجمعة نهاية الشهر لقسم المحاسبة</span>
+            </div>
+          </label>
+
+          <label class="p-4 rounded-2xl border-2 border-slate-200 hover:border-slate-400 cursor-pointer flex items-center gap-3">
+            <input type="radio" name="b2bPayMethod" value="card">
+            <div>
+              <span class="text-xs font-bold text-slate-900 block">بطاقة بنكية / مدى / Visa</span>
+              <span class="text-[11px] text-slate-500">سداد فوري إلكتروني مباشر</span>
+            </div>
+          </label>
+
+          <label class="p-4 rounded-2xl border-2 border-slate-200 hover:border-slate-400 cursor-pointer flex items-center gap-3">
+            <input type="radio" name="b2bPayMethod" value="charged_code">
+            <div>
+              <span class="text-xs font-bold text-slate-900 block">كود شحن رصيد مسبق (Charged Code)</span>
+              <span class="text-[11px] text-slate-500">خصم القيمة من محفظة الشركة المسبقة الدفع</span>
+            </div>
+          </label>
+
+          <label class="p-4 rounded-2xl border-2 border-slate-200 hover:border-slate-400 cursor-pointer flex items-center gap-3">
+            <input type="radio" name="b2bPayMethod" value="cash">
+            <div>
+              <span class="text-xs font-bold text-slate-900 block">دفع نقدي عند الاستلام</span>
+              <span class="text-[11px] text-slate-500">تسليم المبلغ لكابتن الشاحنة عند تفريغ البضاعة</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Order Summary & Confirm (5 cols) -->
+        <div class="md:col-span-5 glass-card-dark rounded-3xl p-6 text-white flex flex-col justify-between shadow-2xl">
+          <div>
+            <h4 class="text-sm font-bold text-lavender-300 pb-3 border-b border-white/10">ملخص الفاتورة والشحنة</h4>
+            
+            <div class="space-y-3 py-4 text-xs">
+              <div class="flex justify-between text-slate-300">
+                <span>قيمة البضائع:</span>
+                <span class="font-bold text-white font-mono" id="cartSubtotal">---</span>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>رسوم النقل والتبريد GPS:</span>
+                <span class="font-bold text-emerald-400 font-mono" id="cartDeliveryFee">180 ر.س</span>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>ضريبة القيمة المضافة (15%):</span>
+                <span class="font-bold text-white font-mono">مشمولة</span>
+              </div>
+              <div class="pt-3 border-t border-white/10 flex justify-between text-sm">
+                <span class="font-bold">المجموع النهائي:</span>
+                <span class="font-black text-xl text-emerald-300 font-mono" id="cartTotal">---</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6">
+            <a href="#/tracking" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/50 text-sm">
+              <i data-lucide="check-circle" class="w-5 h-5"></i>
+              <span>تأكيد الطلب وبدء تتبع الشاحنة حياً</span>
+            </a>
+            <span class="block text-[11px] text-center text-slate-400 mt-2">سيتم إرسال إشعار فوري لكابتن الشاحنة والمستودع</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- VIEW 6: LIVE FLEET TRACKING & DISPATCH (#/tracking)      -->
+  <!-- ======================================================== -->
+  <main id="view-tracking" class="app-view hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      
+      <div class="glass-card-dark rounded-3xl p-6 sm:p-10 text-white shadow-2xl space-y-8">
+        
+        <!-- Order Header -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-white/10">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+              <h1 class="text-2xl font-black text-white">الشحنة #LAV-8924 جارية الآن</h1>
+            </div>
+            <span class="text-xs text-lavender-300 mt-1 block">مستودع هاف مليون المركزي ➔ فرع التحلية، العليا</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <a href="#/order_detail" class="bg-white/10 hover:bg-white/20 text-white text-xs font-bold px-4 py-2.5 rounded-xl border border-white/15 transition flex items-center gap-1.5">
+              <i data-lucide="file-text" class="w-4 h-4 text-lavender-300"></i>
+              <span>عرض الفاتورة وختم الاستلام</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Telemetry Indicators -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="bg-cyan-950/60 border border-cyan-500/40 rounded-2xl p-4">
+            <span class="text-[11px] text-cyan-300 font-bold block mb-1">مستشعر حرارة التبريد IoT</span>
+            <div class="text-3xl font-black text-cyan-300 font-mono live-temp-display">+2.4°C</div>
+            <span class="text-[10px] text-emerald-400 font-semibold">حفظ آمن (المدى: 0 إلى 4°C)</span>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+            <span class="text-[11px] text-slate-300 block mb-1">كابتن الشاحنة</span>
+            <div class="text-base font-bold text-white">محمد القحطاني</div>
+            <span class="text-[10px] text-slate-400 font-mono">لوحة: أ ب د - 4 8 2 1</span>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+            <span class="text-[11px] text-slate-300 block mb-1">نوع الشاحنة</span>
+            <div class="text-base font-bold text-white">إيسوزو دينا مبردة 2024</div>
+            <span class="text-[10px] text-emerald-400">سعة 4 طن - تبريد تيربو</span>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+            <span class="text-[11px] text-slate-300 block mb-1">الوقت المتوقع للوصول</span>
+            <div class="text-2xl font-black text-emerald-400 font-mono">18 دقيقة</div>
+            <span class="text-[10px] text-slate-400">حركة المرور: انسيابية</span>
+          </div>
+        </div>
+
+        <!-- Live Simulated Route Map Container -->
+        <div class="relative bg-slate-900 rounded-2xl p-6 border border-white/10 overflow-hidden h-72 flex items-center justify-center">
+          <div class="absolute inset-0 bg-[radial-gradient(#4c1d95_1px,transparent_1px)] [background-size:16px_16px] opacity-40"></div>
+          
+          <!-- Moving Simulated Truck Graphic -->
+          <div class="relative z-10 text-center space-y-3">
+            <div class="inline-flex items-center gap-3 bg-slate-950/80 backdrop-blur-md px-6 py-3 rounded-2xl border border-lavender-500/50 shadow-2xl">
+              <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="font-bold text-sm">الشاحنة تسير على طريق الملك فهد باتجاه الفرع</span>
+              <span class="bg-lavender-600 text-white text-xs px-2.5 py-0.5 rounded-md font-mono">GPS Active</span>
+            </div>
+            <div class="text-xs text-slate-400">
+              إحداثيات الشاحنة المباشرة: 24.7136° N, 46.6753° E
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Steps Dispatch Timeline -->
+        <div>
+          <span class="text-xs font-bold text-lavender-300 block mb-4 uppercase">مراحل التوصيل وفق نظام لافندر التشغيلي:</span>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-xs">
+            <div class="bg-emerald-500/10 border border-emerald-500/40 rounded-xl p-3">
+              <span class="text-emerald-400 font-bold block">✓ 1. استلام الطلب</span>
+              <span class="text-[10px] text-slate-400">09:00 ص</span>
+            </div>
+            <div class="bg-emerald-500/10 border border-emerald-500/40 rounded-xl p-3">
+              <span class="text-emerald-400 font-bold block">✓ 2. قبول السائق</span>
+              <span class="text-[10px] text-slate-400">09:15 ص</span>
+            </div>
+            <div class="bg-emerald-500/10 border border-emerald-500/40 rounded-xl p-3">
+              <span class="text-emerald-400 font-bold block">✓ 3. وصول للمورد</span>
+              <span class="text-[10px] text-slate-400">09:40 ص</span>
+            </div>
+            <div class="bg-emerald-500/10 border border-emerald-500/40 rounded-xl p-3">
+              <span class="text-emerald-400 font-bold block">✓ 4. استلام الأصناف</span>
+              <span class="text-[10px] text-slate-400">10:05 ص</span>
+            </div>
+            <div class="bg-violet-600/40 border-2 border-violet-400 rounded-xl p-3 shadow-lg">
+              <span class="text-white font-bold block">● 5. في الطريق</span>
+              <span class="text-[10px] text-violet-300 font-bold">المرحلة الحالية</span>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-3 opacity-60">
+              <span class="text-slate-300 font-bold block">6. التسليم والختم</span>
+              <span class="text-[10px] text-slate-400">المتوقع 10:45 ص</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- VIEW 7: ORDER DETAIL & e-POD STAMPED BILL (#/order_detail) -->
+  <!-- ======================================================== -->
+  <main id="view-order_detail" class="app-view hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-lavender-200 space-y-8">
+        
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-slate-200">
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-2xl font-black text-slate-950">تفاصيل الفاتورة الإلكترونية</h1>
+              <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-0.5 rounded-md">فاتورة ضريبية B2B</span>
+            </div>
+            <span class="text-xs text-slate-500 font-mono mt-1 block">رقم الفاتورة: INV-2026-8924 | التاريخ: 11 أكتوبر 2026</span>
+          </div>
+
+          <div class="text-left">
+            <span class="text-xs text-slate-400 block">إجمالي الفاتورة</span>
+            <span class="text-2xl font-black text-lavender-900 font-mono">1,490 ر.س</span>
+          </div>
+        </div>
+
+        <!-- Electronic Proof of Delivery (e-POD) -->
+        <div class="bg-lavender-50 border-2 border-lavender-300 rounded-2xl p-6">
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-lavender-700 text-white flex items-center justify-center shrink-0">
+                <i data-lucide="stamp" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-950">توثيق وختم الفاتورة بعد الاستلام (e-POD)</h4>
+                <p class="text-xs text-slate-600 mt-0.5">
+                  وفقاً لنظام لافندر، يمكنك رفع صورة الفاتورة بعد ختمها من مسؤول الفرع لتأكيد الاستلام وإرسالها للحسابات.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <button id="btnUploadEpodStatic" onclick="handleStampBillUpload()" class="btn-lavender px-5 py-3 rounded-xl text-xs font-bold flex items-center gap-2 whitespace-nowrap shadow-md">
+                <i data-lucide="upload" class="w-4 h-4"></i>
+                <span>رفع الفاتورة المختومة الآن</span>
+              </button>
+
+              <div id="epodSuccessBadgeStatic" class="hidden flex items-center gap-2 bg-emerald-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                <span>تم توثيق الفاتورة واعتمادها رسمياً</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bill Items Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-right text-xs">
+            <thead class="bg-slate-100 text-slate-700 font-bold">
+              <tr>
+                <th class="p-3 rounded-r-xl">البند / المادة</th>
+                <th class="p-3">النمط الحراري</th>
+                <th class="p-3">الكمية</th>
+                <th class="p-3">السعر</th>
+                <th class="p-3 rounded-l-xl text-left">المجموع</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 font-medium">
+              <tr>
+                <td class="p-3 font-bold text-slate-900">كرتون حليب طازج كامل الدسم (12 عبوة)</td>
+                <td class="p-3 text-cyan-700 font-semibold">مبرد +4°C</td>
+                <td class="p-3 font-mono">15 كرتون</td>
+                <td class="p-3 font-mono">68 ر.س</td>
+                <td class="p-3 font-mono font-bold text-left">1,020 ر.س</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-slate-900">حبوب قهوة كولومبية إكسلسو</td>
+                <td class="p-3 text-amber-700 font-semibold">جاف Dry</td>
+                <td class="p-3 font-mono">10 كجم</td>
+                <td class="p-3 font-mono">95 ر.س</td>
+                <td class="p-3 font-mono font-bold text-left">950 ر.س</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-slate-900">رسوم النقل والتوزيع المبرد بنظام الـ GPS</td>
+                <td class="p-3 text-emerald-700 font-semibold">خدمة النقل</td>
+                <td class="p-3 font-mono">1 رحلة</td>
+                <td class="p-3 font-mono">180 ر.س</td>
+                <td class="p-3 font-mono font-bold text-left">180 ر.س</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Incident & Damaged Image Claim -->
+        <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+          <span>في حال وجود أية ملاحظات أو تلفيات بالمنتجات:</span>
+          <button onclick="alert('محاكاة: تتيح هذه الميزة رفع صورة التلفيات مباشرة لطلب التعويض الفوري')" class="text-rose-600 font-bold hover:underline flex items-center gap-1.5">
+            <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+            <span>الإبلاغ عن تلفيات ورفع صورة المنتج التالف</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- VIEW 8: ORDER HISTORY LIST (#/order_list)                -->
+  <!-- ======================================================== -->
+  <main id="view-order_list" class="app-view hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      
+      <div class="flex justify-between items-center mb-8">
+        <div>
+          <h1 class="text-2xl font-black text-slate-950">سجل طلبات وشحنات المنشأة</h1>
+          <p class="text-xs text-slate-500 mt-1">استعراض وتتبع كافة الشحنات الحالية والمكتملة</p>
+        </div>
+        <a href="#/home" class="btn-lavender px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md">
+          <i data-lucide="plus" class="w-4 h-4"></i>
+          <span>طلب شحنة جديدة</span>
+        </a>
+      </div>
+
+      <div class="glass-card rounded-3xl overflow-hidden border border-slate-200">
+        <div class="overflow-x-auto">
+          <table class="w-full text-right text-xs">
+            <thead class="bg-slate-100 text-slate-700 font-bold">
+              <tr>
+                <th class="p-4">رقم الشحنة</th>
+                <th class="p-4">المورد والمحتوى</th>
+                <th class="p-4">الفرع الوجهة</th>
+                <th class="p-4">النمط الحراري</th>
+                <th class="p-4">الحالة</th>
+                <th class="p-4 text-left">الإجراء</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 font-medium">
+              
+              <tr class="hover:bg-slate-50 transition">
+                <td class="p-4 font-mono font-bold text-lavender-900">#LAV-8924</td>
+                <td class="p-4 font-bold text-slate-900">هاف مليون (حليب مبرد وبن)</td>
+                <td class="p-4 text-slate-600">فرع العليا - التحلية</td>
+                <td class="p-4"><span class="bg-cyan-100 text-cyan-800 px-2 py-0.5 rounded-md font-bold">مبرد +4°C</span></td>
+                <td class="p-4"><span class="bg-violet-100 text-violet-800 px-2.5 py-1 rounded-full font-bold">في الطريق 🚚</span></td>
+                <td class="p-4 text-left">
+                  <a href="#/tracking" class="btn-lavender px-3 py-1.5 rounded-lg font-bold text-[11px] inline-block">تتبع حي</a>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-slate-50 transition">
+                <td class="p-4 font-mono font-bold text-slate-800">#LAV-8730</td>
+                <td class="p-4 font-bold text-slate-900">مخابز ليلو (كيك ومخبوزات)</td>
+                <td class="p-4 text-slate-600">فرع طريق الملك عبد الله</td>
+                <td class="p-4"><span class="bg-cyan-100 text-cyan-800 px-2 py-0.5 rounded-md font-bold">مبرد +2°C</span></td>
+                <td class="p-4"><span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full font-bold">تم التسليم والختم ✓</span></td>
+                <td class="p-4 text-left">
+                  <a href="#/order_detail" class="text-lavender-700 font-bold hover:underline">عرض الفاتورة</a>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-slate-50 transition">
+                <td class="p-4 font-mono font-bold text-slate-800">#LAV-8612</td>
+                <td class="p-4 font-bold text-slate-900">حلويات تمرية (تموين شوكولاتة)</td>
+                <td class="p-4 text-slate-600">المستودع المركزي - السلي</td>
+                <td class="p-4"><span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded-md font-bold">جاف Dry</span></td>
+                <td class="p-4"><span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full font-bold">تم التسليم والختم ✓</span></td>
+                <td class="p-4 text-left">
+                  <a href="#/order_detail" class="text-lavender-700 font-bold hover:underline">عرض الفاتورة</a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- VIEW 9: BRANCHES & LOCATIONS (#/locations)               -->
+  <!-- ======================================================== -->
+  <main id="view-locations" class="app-view hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      
+      <div class="flex justify-between items-center mb-8">
+        <div>
+          <h1 class="text-2xl font-black text-slate-950">إدارة فروع وعناوين الاستلام</h1>
+          <p class="text-xs text-slate-500 mt-1">حفظ عناوين الفروع والمستودعات لتسهيل توجيه الشاحنات المبردة</p>
+        </div>
+        <button onclick="alert('محاكاة: تفتح هذه النافذة خريطة Google Maps لتحديد إحداثيات الفرع الجديد')" class="btn-lavender px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md">
+          <i data-lucide="plus" class="w-4 h-4"></i>
+          <span>إضافة فرع جديد</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4">
+        
+        <div class="glass-card rounded-2xl p-5 border-2 border-lavender-400 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div class="flex items-start gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-lavender-100 text-lavender-700 flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="store" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h4 class="text-sm font-bold text-slate-950">فرع العليا - طريق التحلية</h4>
+                <span class="bg-lavender-100 text-lavender-800 text-[10px] font-bold px-2 py-0.5 rounded">الفرع الافتراضي</span>
+              </div>
+              <p class="text-xs text-slate-600 mt-1">الرياض، حي العليا، تقاطع شارع الضباب مع التحلية</p>
+              <span class="text-[11px] text-slate-400 mt-1 block">ملاحظات السائق: بوابة الاستلام الخلفية - هاتف الفرع 0114567890</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <span class="text-xs text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-md">داخل نطاق التغطية ✓</span>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div class="flex items-start gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="store" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-950">فرع طريق الملك عبد الله</h4>
+              <p class="text-xs text-slate-600 mt-1">الرياض، مخرج 10، بالقرب من مركز المعارض</p>
+              <span class="text-[11px] text-slate-400 mt-1 block">ملاحظات السائق: التحميل الصباحي الباكر قبل الساعة 7:00 ص</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <span class="text-xs text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-md">داخل نطاق التغطية ✓</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- VIEW 10: SIGN IN (#/login)                               -->
+  <!-- ======================================================== -->
+  <main id="view-login" class="app-view hidden">
+    <div class="min-h-[70vh] flex items-center justify-center px-4 py-12">
+      <div class="glass-card rounded-3xl max-w-md w-full p-8 shadow-2xl border border-lavender-200">
+        
+        <div class="text-center mb-8">
+          <div class="w-14 h-14 rounded-2xl bg-lavender-700 text-white flex items-center justify-center mx-auto mb-3 shadow-lg p-2.5">
+            <img src="./images/logo.png" alt="Lavender" class="w-full h-full object-contain filter brightness-0 invert">
+          </div>
+          <h2 class="text-2xl font-black text-slate-950">تسجيل الدخول للمنصة</h2>
+          <p class="text-xs text-slate-500 mt-1">بوابة عملاء B2B وسائقي أسطول لافندر</p>
+        </div>
+
+        <form onsubmit="event.preventDefault(); navigateTo('home'); showToast('تم تسجيل الدخول بنجاح');" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">رقم الجوال التجاري للمنشأة</label>
+            <input type="tel" required value="0508500685" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-lavender-500 focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">رمز التحقق / كلمة المرور (PIN)</label>
+            <input type="password" required value="1234" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-lavender-500 focus:outline-none">
+          </div>
+
+          <button type="submit" class="btn-lavender w-full py-3.5 rounded-xl font-bold text-sm shadow-lg mt-2">
+            دخول فوري للمنصة
+          </button>
+        </form>
+
+        <div class="mt-6 pt-6 border-t border-slate-100 text-center text-xs text-slate-500">
+          <span>ليس لديك حساب منشأة؟ </span>
+          <a href="#/signup" class="text-lavender-700 font-bold hover:underline">تسجيل حساب جديد</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- VIEW 11: SIGN UP (#/signup)                              -->
+  <!-- ======================================================== -->
+  <main id="view-signup" class="app-view hidden">
+    <div class="min-h-[70vh] flex items-center justify-center px-4 py-12">
+      <div class="glass-card rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-lavender-200">
+        
+        <div class="text-center mb-6">
+          <h2 class="text-2xl font-black text-slate-950">تسجيل منشأة جديدة B2B</h2>
+          <p class="text-xs text-slate-500 mt-1">انضم لشبكة التوريد والتوزيع المبرد الرائدة في المملكة</p>
+        </div>
+
+        <form onsubmit="event.preventDefault(); navigateTo('home'); showToast('تم إنشاء الحساب بنجاح، مرحباً بكم في لافندر');" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">اسم المنشأة أو السلسلة التجارية *</label>
+            <input type="text" required placeholder="مثال: سلسلة مقاهي ومطاعم..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-lavender-500">
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">رقم السجل التجاري *</label>
+              <input type="text" required placeholder="1010xxxxxx" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-lavender-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">رقم الجوال المعتمد *</label>
+              <input type="tel" required placeholder="05xxxxxxxx" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-lavender-500">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">المدينة والفرع الرئيسي</label>
+            <input type="text" value="الرياض" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-lavender-500">
+          </div>
+
+          <button type="submit" class="btn-lavender w-full py-3.5 rounded-xl font-bold text-sm shadow-lg mt-2">
+            تأكيد تسجيل المنشأة والبدء
+          </button>
+        </form>
+
+        <div class="mt-6 pt-6 border-t border-slate-100 text-center text-xs text-slate-500">
+          <span>مسجل مسبقاً؟ </span>
+          <a href="#/login" class="text-lavender-700 font-bold hover:underline">تسجيل الدخول</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- VIEW 12: B2B ADMIN DASHBOARD (#/admin)                   -->
+  <!-- ======================================================== -->
+  <main id="view-admin" class="app-view hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      
+      <!-- Admin Top Card -->
+      <div class="bg-gradient-to-r from-slate-950 via-lavender-950 to-slate-950 rounded-3xl p-6 sm:p-8 text-white shadow-2xl mb-8 border border-lavender-500/30">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center justify-center font-bold">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h1 class="text-2xl font-black text-white">لوحة تحكم إدارة العمليات (Lavender B2B Admin)</h1>
+              <span class="text-xs text-lavender-300">مراقبة الأسطول اللوجستي والشاحنات المبردة لحظياً</span>
+            </div>
+          </div>
+          <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3.5 py-1 rounded-full text-xs font-bold">
+            52 مركبة نشطة حالياً
+          </span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6">
+          <div class="bg-white/5 rounded-2xl p-4">
+            <span class="text-xs text-slate-400 block mb-1">الرحلات الجارية الآن</span>
+            <span class="text-3xl font-black text-white font-mono">28</span>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-4">
+            <span class="text-xs text-slate-400 block mb-1">متوسط حرارة الحاويات</span>
+            <span class="text-3xl font-black text-cyan-300 font-mono">+2.6°C</span>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-4">
+            <span class="text-xs text-slate-400 block mb-1">فواتير e-POD المعتمدة اليوم</span>
+            <span class="text-3xl font-black text-emerald-400 font-mono">142</span>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-4">
+            <span class="text-xs text-slate-400 block mb-1">معدل الالتزام بالمواعيد</span>
+            <span class="text-3xl font-black text-amber-300 font-mono">99.4%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Fleet Real-time Status Table -->
+      <div class="glass-card rounded-3xl overflow-hidden border border-slate-200">
+        <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+          <h3 class="text-base font-bold text-slate-900">حالة أسطول الشاحنات الميداني المباشر</h3>
+          <span class="text-xs text-slate-500">تحديث تلقائي عبر IoT و GPS</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-right text-xs">
+            <thead class="bg-slate-50 text-slate-700 font-bold">
+              <tr>
+                <th class="p-4">الشاحنة</th>
+                <th class="p-4">الكابتن</th>
+                <th class="p-4">العميل الحالي</th>
+                <th class="p-4">قراءة التبريد الحية</th>
+                <th class="p-4">الموقع الجغرافي</th>
+                <th class="p-4 text-left">حالة الرحلة</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 font-medium">
+              <tr>
+                <td class="p-4 font-bold text-slate-900 font-mono">TRUCK #42</td>
+                <td class="p-4">محمد القحطاني</td>
+                <td class="p-4 font-bold text-lavender-900">هاف مليون (Half Million)</td>
+                <td class="p-4 font-mono font-bold text-cyan-700">+2.4°C (مثالي)</td>
+                <td class="p-4 text-slate-600">طريق الملك فهد، الرياض</td>
+                <td class="p-4 text-left"><span class="bg-violet-100 text-violet-800 px-2.5 py-1 rounded-full font-bold">في الطريق 🚚</span></td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-slate-900 font-mono">TRUCK #18</td>
+                <td class="p-4">خالد الدوسري</td>
+                <td class="p-4 font-bold text-lavender-900">ليلو (Lilou Bakery)</td>
+                <td class="p-4 font-mono font-bold text-cyan-700">+1.9°C (مثالي)</td>
+                <td class="p-4 text-slate-600">حي المحمدية، جدة</td>
+                <td class="p-4 text-left"><span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full font-bold">تفريغ واستلام 📦</span></td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-slate-900 font-mono">TRUCK #07</td>
+                <td class="p-4">سعد الغامدي</td>
+                <td class="p-4 font-bold text-lavender-900">حلويات تمرية (Tmryah)</td>
+                <td class="p-4 font-mono font-bold text-cyan-700">+3.1°C (مثالي)</td>
+                <td class="p-4 text-slate-600">الدمام - الخبر السريع</td>
+                <td class="p-4 text-left"><span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full font-bold">تم التسليم والختم ✓</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- FOOTER (GLOBAL)                                          -->
+  <!-- ======================================================== -->
+  <footer class="bg-lavender-950 text-white pt-14 pb-12 mt-20 border-t border-lavender-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-white/10 text-xs">
+        <div class="space-y-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-xl bg-lavender-600 p-1.5 flex items-center justify-center">
+              <img src="./images/logo.png" alt="Lavender" class="w-full h-full object-contain filter brightness-0 invert">
+            </div>
+            <span class="text-xl font-black">لافندر للخدمات اللوجستية</span>
+          </div>
+          <p class="text-slate-300 leading-relaxed">
+            مؤسسة سعودية متخصصة في النقل والتوزيع المبرد وسلاسل الإمداد بمختلف مدن المملكة.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white mb-3">التنقل السريع</h4>
+          <ul class="space-y-2 text-slate-300">
+            <li><a href="#/landing" class="hover:text-white">عن لافندر</a></li>
+            <li><a href="#/home" class="hover:text-white">منصة التوريد B2B</a></li>
+            <li><a href="#/tracking" class="hover:text-white">التتبع الميداني</a></li>
+            <li><a href="#/admin" class="hover:text-white">لوحة الإدارة B2B</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white mb-3">أرقام التواصل الرسمية</h4>
+          <ul class="space-y-2 font-mono text-slate-300">
+            <li>خدمة العملاء: <a href="tel:0508500685" class="hover:text-white">0508500685</a></li>
+            <li>إدارة العمليات: <a href="tel:0559979956" class="hover:text-white">0559979956</a></li>
+            <li>المبيعات: <a href="tel:0504274882" class="hover:text-white">0504274882</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white mb-3">المقر والمراسلات</h4>
+          <p class="text-slate-300 leading-relaxed">
+            الرياض، حي الشهداء، طريق خالد بن الوليد، المملكة العربية السعودية.
+          </p>
+          <span class="block mt-2 font-mono text-lavender-300">info@lavenderapp.net</span>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-3">
+        <span>جميع الحقوق محفوظة &copy; 2026 لمؤسسة لافندر للخدمات اللوجستية (Lavender Logistic).</span>
+        <span>جاهز للرفع المباشر على GitHub Pages أو الاستضافة السحابية 🚀</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- App Controller (Relative script for local & GitHub Pages) -->
+  <script src="./js/app.js"></script>
+</body>
+</html>
